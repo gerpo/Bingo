@@ -23,6 +23,10 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Install node
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN apt install -y nodejs npm
+
 # Create system user to run Composer and Artisan Commands
 RUN useradd -G www-data,root -d /home/app-user app-user
 RUN mkdir -p /home/app-user/.composer && \
@@ -31,6 +35,10 @@ RUN mkdir -p /home/app-user/.composer && \
 RUN git clone https://github.com/gerpo/Bingo.git /var/www/bingo
 
 # Set working directory
-WORKDIR /var/www
+WORKDIR /var/www/bingo
+
+RUN composer install
+RUN npm install
+RUN npm run prod
 
 USER app-user
