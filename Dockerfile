@@ -25,7 +25,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Install node
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
-RUN apt install -y nodejs npm
+RUN apt install -y nodejs
 
 # Create system user to run Composer and Artisan Commands
 RUN useradd -G www-data,root -d /home/app-user app-user
