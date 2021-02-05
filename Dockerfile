@@ -28,9 +28,9 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt install -y nodejs
 
 # Create system user to run Composer and Artisan Commands
-RUN useradd -G www-data,root -d /home/app-user app-user
-RUN mkdir -p /home/app-user/.composer && \
-    chown -R app-user:app-user /home/app-user
+#RUN useradd -G www-data,root -d /home/app-user app-user
+#RUN mkdir -p /home/app-user/.composer && \
+#    chown -R app-user:app-user /home/app-user
 
 RUN git clone https://github.com/gerpo/Bingo.git /var/www/bingo
 
@@ -41,4 +41,6 @@ RUN composer install
 RUN npm install
 RUN npm run prod
 
-USER app-user
+RUN chown -R www-data:www-data /var/www/bingo/storage
+
+USER www-data
