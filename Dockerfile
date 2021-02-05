@@ -28,7 +28,7 @@ RUN useradd -G www-data,root -d /home/app-user app-user
 RUN mkdir -p /home/app-user/.composer && \
     chown -R app-user:app-user /home/app-user
 
-RUN git clone https://github.com/gerpo/Bingo.git /var/www
+RUN git clone https://github.com/gerpo/Bingo.git /var/www/bingo
 
 # Set working directory
 WORKDIR /var/www
