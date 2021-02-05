@@ -37,13 +37,12 @@ RUN git clone https://github.com/gerpo/Bingo.git /var/www/bingo
 # Set working directory
 WORKDIR /var/www/bingo
 
-RUN cp .env.example .env
-RUN php artisan key:generate
-
 RUN composer install
 RUN npm install
 RUN npm run prod
 
+RUN cp .env.example .env
 RUN chown -R www-data:www-data /var/www/bingo/storage
+RUN php artisan key:generate
 
 USER www-data
