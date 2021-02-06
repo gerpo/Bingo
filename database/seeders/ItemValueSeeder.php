@@ -10,7 +10,7 @@ class ItemValueSeeder extends Seeder
     public function run(): void
     {
         ItemValue::factory()
-            ->count(50)
+            ->count(5000)
             ->create();
     }
 }
