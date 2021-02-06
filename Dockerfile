@@ -42,7 +42,7 @@ RUN npm install
 RUN npm run prod
 
 RUN cp .env.example .env
-RUN chown -R www-data:www-data /var/www/bingo/storage
+RUN chown -R www-data:www-data /var/www/bingo
 RUN php artisan key:generate
 
 USER www-data

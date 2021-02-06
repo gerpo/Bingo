@@ -10,8 +10,8 @@
     @livewireStyles
 </head>
 
-<body class="bg-gray-50 bg-gradient-to-t from-red-100">
-    <div class="container px-10 py-10 mx-auto ">
+<body class="bg-gray-700 bg-gradient-to-b from-red-100">
+    <div class="container px-10 py-10 mx-auto">
         {{ $slot }}
     </div>
 
