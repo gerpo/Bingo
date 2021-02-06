@@ -41,6 +41,7 @@ class ItemValueFactory extends Factory
         'Adam',
         'Caroline',
         'Mara',
+        'Frank',
     ];
 
     public function definition(): array
