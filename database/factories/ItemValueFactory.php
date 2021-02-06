@@ -10,11 +10,44 @@ class ItemValueFactory extends Factory
 {
     protected $model = ItemValue::class;
 
+    protected $names = [
+        'Jerome',
+        'Julia v.W.',
+        'Drop',
+        'Emely',
+        'Magnus',
+        'Benny',
+        'Lena',
+        'Werner',
+        'Timo',
+        'Maren',
+        'Saskia',
+        'Jana',
+        'Georg',
+        'Sandra & Janine',
+        'Leonie',
+        'Katrin',
+        'Daniel',
+        'Thommy',
+        'Anna-Lena',
+        'Charlotte',
+        'Djana',
+        'Michael G.',
+        'Simon',
+        'Hermann',
+        'Michelle',
+        'Aki',
+        'Herbert',
+        'Adam',
+        'Caroline',
+        'Mara',
+    ];
+
     public function definition(): array
     {
         return [
             'type' => ItemValue::TEXT_TYPE,
-            'value' => $this->faker->firstName,
+            'value' => Arr::random($this->names),
         ];
     }
 

@@ -11,7 +11,7 @@
 </head>
 
 <body class="bg-gray-700 bg-gradient-to-b from-red-100">
-    <div class="container px-10 py-10 mx-auto">
+    <div class="container px-10 pt-10 mx-auto">
         {{ $slot }}
     </div>
 
